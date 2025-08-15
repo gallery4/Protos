@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Backend";
+
+package browse;
+
+service Browse { rpc List(ListRequest) returns (ListResponse); }
+
+message ListRequest { string path = 1; }
+
+message ListResponseItem {
+  string name = 1;
+  google.protobuf.Timestamp datetime = 2;
+}
+
+message ListResponse {
+  string path = 1;
+  repeated ListResponseItem directories = 2;
+  repeated ListResponseItem archives = 3;
+  repeated ListResponseItem files = 4;
+}
