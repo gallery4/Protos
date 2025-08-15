@@ -12,7 +12,7 @@ message ListRequest { string path = 1; }
 
 message ListResponseItem {
   string name = 1;
-  google.protobuf.Timestamp datetime = 2;
+  google.protobuf.Timestamp dateTime = 2;
 }
 
 message ListResponse {
