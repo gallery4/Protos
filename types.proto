@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package types;
+option csharp_namespace = "Services";
+
+enum ListType {
+  FILTER_UNKNOWN = 0;
+  FILTER_LIST = 1;
+  FILTER_GRID = 2;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "Services";
+
+package image;
+
+service Image {
+  rpc Thumbnail(ThumbnailRequest) returns (stream ImageStreamResponse);
+  rpc View(ViewRequest) returns (stream ImageStreamResponse);
+}
+
+message ThumbnailRequest { string path = 1; }
+
+message ViewRequest { string path = 1; }
+
+message ImageStreamResponse {
+  string Filename = 1;
+  string ContentType = 2;
+  bytes Data = 3;
+  int32 Size = 4;
+}
