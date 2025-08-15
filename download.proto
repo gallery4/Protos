@@ -4,7 +4,7 @@ option csharp_namespace = "Backend";
 
 package download;
 
-service Download { rpc Gett(GetRequest) returns (stream DownloadStreamResponse); }
+service Download { rpc Get(GetRequest) returns (stream DownloadStreamResponse); }
 
 message GetRequest { string path = 1; }
 
