@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "Backend";
+
+package download;
+
+service Download { rpc Gett(GetRequest) returns (stream DownloadStreamResponse); }
+
+message GetRequest { string path = 1; }
+
+message DownloadStreamResponse {
+  string Filename = 1;
+  bytes Data = 2;
+  int32 Size = 3;
+}
