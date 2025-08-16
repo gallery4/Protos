@@ -2,6 +2,8 @@ syntax = "proto3";
 
 option csharp_namespace = "Backend";
 
+import "types.proto";
+
 package image;
 
 service Image {
@@ -9,7 +11,10 @@ service Image {
   rpc View(ViewRequest) returns (stream ImageStreamResponse);
 }
 
-message ThumbnailRequest { string path = 1; }
+message ThumbnailRequest {
+  string path = 1;
+  types.ListType listType = 2;
+}
 
 message ViewRequest { string path = 1; }
 

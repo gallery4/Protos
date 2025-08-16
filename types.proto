@@ -1,10 +1,10 @@
 syntax = "proto3";
 
 package types;
-option csharp_namespace = "Services";
+option csharp_namespace = "Backend";
 
 enum ListType {
-  FILTER_UNKNOWN = 0;
-  FILTER_LIST = 1;
-  FILTER_GRID = 2;
+  LIST_TYPE_UNKNOWN = 0;
+  LIST_TYPE_LIST = 1;
+  LIST_TYPE_GRID = 2;
 }
